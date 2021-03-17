@@ -2,16 +2,15 @@ package main
 
 import (
 	"fmt"
-	"errors"
 )
 func main() {
 	port := 3000
-	err := startWebServer(port)
-	fmt.Println(err)
+	port, err := startWebServer(port)
+	fmt.Println(port, err)
 }
 
-func startWebServer(port int) error {
+func startWebServer(port int) (int, error) {
 	fmt.Println("starting server")
 	fmt.Println("server started on port", port)
-	return errors.New("something went wrong")
+	return port, nil
 }
