@@ -2,14 +2,16 @@ package main
 
 import (
 	"fmt"
+	"errors"
 )
 func main() {
 	port := 3000
-	startWebServer(port, 2)
+	err := startWebServer(port)
+	fmt.Println(err)
 }
 
-func startWebServer(port, numberOfRetries int) {
+func startWebServer(port int) error {
 	fmt.Println("starting server")
 	fmt.Println("server started on port", port)
-	fmt.Println("Number of retries", numberOfRetries)
+	return errors.New("something went wrong")
 }
