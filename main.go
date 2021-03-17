@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/pluralsight/webservice/models"
 )
 func main() {
-	u := models.User{
-		ID: 2,
-		FirstName: "Ali",
-		LastName: "McMillian",
-	}
-	fmt.Println(u)
+	port := 3000
+	startWebServer(port, 2)
+}
+
+func startWebServer(port, numberOfRetries int) {
+	fmt.Println("starting server")
+	fmt.Println("server started on port", port)
+	fmt.Println("Number of retries", numberOfRetries)
 }
