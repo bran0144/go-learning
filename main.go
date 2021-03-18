@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
-)
-func main() {
-	port := 3000
-	_, err := startWebServer(port)
-	fmt.Println(err)
-}
+	"net/http"
 
-func startWebServer(port int) (int, error) {
-	fmt.Println("starting server")
-	fmt.Println("server started on port", port)
-	return port, nil
+	"github.com/pluralsight/webservice/controllers"
+)
+
+func main() {
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
