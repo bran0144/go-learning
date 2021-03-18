@@ -5,8 +5,8 @@ import (
 )
 func main() {
 	port := 3000
-	port, err := startWebServer(port)
-	fmt.Println(port, err)
+	_, err := startWebServer(port)
+	fmt.Println(err)
 }
 
 func startWebServer(port int) (int, error) {
